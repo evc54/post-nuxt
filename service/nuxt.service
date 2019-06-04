@@ -1,0 +1,11 @@
+[Unit]
+Description=postgrest
+After=postgresql.service
+
+[Service]
+WorkingDirectory=%h/app
+ExecStart=%h/app/node_modules/.bin/nuxt start
+Restart=always
+
+[Install]
+WantedBy=default.target

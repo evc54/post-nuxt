@@ -1,0 +1,9 @@
+[Unit]
+Description=postgrest
+
+[Service]
+ExecStart=%h/bin/postgrest %h/postgrest/postgrest.conf
+ExecReload=/bin/kill -SIGUSR1 $MAINPID
+
+[Install]
+WantedBy=default.target
