@@ -1,6 +1,7 @@
 {
-  "name": "evc54/post-nuxt",
-  "version": "1.0.0",
+  "name": "@evc54/post-nuxt",
+  "version": "1.1.0",
+  "license": "MIT",
   "description": "PostgREST & Nuxt.js",
   "author": "Eugene V Chernyshev <evc22rus@gmail.com>",
   "scripts": {

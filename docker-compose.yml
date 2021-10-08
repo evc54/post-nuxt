@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  server:
+    image: postgrest/postgrest
+    ports:
+      - "3001:3000"
+    environment:
+      PGRST_DB_URI: postgres://authenticator:password@db:5432/postgrest
+      PGRST_DB_SCHEMA: api
+      PGRST_DB_ANON_ROLE: anonymous
+      PGRST_DB_POOL: 5
+      PGRST_DB_EXTRA_SEARCH_PATH: "public"
+      PGRST_JWT_SECRET: "Hev4MY0fFAclCGZcot0RQ1AL7rFqooo4JfFfuaCW"
+      PGRST_MAX_ROWS: 100
+    restart: always
+    depends_on:
+      - db
+  db:
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_DB: postgrest
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      JWT_SECRET: "Hev4MY0fFAclCGZcot0RQ1AL7rFqooo4JfFfuaCW"
+    volumes:
+      - "./.docker/postgres:/docker-entrypoint-initdb.d"
+    # Uncomment the following to enable persistent database state
+    # - "./pgdata:/var/lib/postgresql/data"

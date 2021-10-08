@@ -8,12 +8,7 @@
       >
         <div class="container">
           <div class="navbar-brand">
-            <nuxt-link
-              to="/"
-              class="navbar-item"
-            >
-              <strong>PostgREST</strong>
-            </nuxt-link>
+            <strong class="navbar-item">PostNuxt</strong>
 
             <a
               role="button"
@@ -35,9 +30,15 @@
             <div class="navbar-start">
               <nuxt-link
                 v-if="isLogged"
+                to="/"
+                class="navbar-item"
+              >My TODOs</nuxt-link>
+
+              <nuxt-link
+                v-if="isLogged"
                 to="/todos"
                 class="navbar-item"
-              >TODOs</nuxt-link>
+              >Other's TODOs</nuxt-link>
 
               <span
                 v-if="isLogged"
@@ -97,14 +98,14 @@
       <div class="content has-text-centered">
         <p>
           <a
-            href="https://postgrest.org/"
-            target="_blank"
-          >PostgREST</a>
-          and
-          <a
             href="https://nuxtjs.org/"
             target="_blank"
           >NUXT.js</a>
+          meets
+          <a
+            href="https://postgrest.org/"
+            target="_blank"
+          >PostgREST</a>
         </p>
       </div>
     </footer>

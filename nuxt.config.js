@@ -1,15 +1,13 @@
-const ip = require('ip');
-
 module.exports = {
   debug: true,
 
   head: {
-    title: 'test-app',
+    title: 'Nuxt/PostgREST',
 
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+      { hid: 'description', name: 'description', content: 'Nuxt.js meets PostgREST' },
     ],
 
     link: [
@@ -32,7 +30,6 @@ module.exports = {
 
   axios: {
     baseURL: 'http://127.0.0.1:3001',
-    browserBaseURL: `http://${ip.address()}/api`,
     proxyHeaders: false,
   },
 
@@ -46,7 +43,7 @@ module.exports = {
   build: {
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
-        config.devtool = '#eval-source-map';
+        config.devtool = 'eval-source-map';
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

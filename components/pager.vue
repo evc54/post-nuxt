@@ -80,7 +80,7 @@
         ];
 
         // start segment
-        if (current >= 3 && current < 5) {
+        if (current > 3 && current < 5) {
           segments[0].items = this.range(1, current + 1);
         } else if (current >= 5) {
           segments[0].items = this.range(1, 1);

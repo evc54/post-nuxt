@@ -12,5 +12,5 @@ npm-debug.log
 # Nuxt generate
 dist
 
-# local webpack config
-webpack.config.js
+# postgres persistent data
+pgdata
